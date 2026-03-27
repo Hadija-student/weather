@@ -37,11 +37,18 @@ const Weather = () => {
         <button onClick={handleClick}>Издөө</button>
       </div>
 
-      <div className={styles.weather}>
+      {/* <div className={styles.weather}>
         <h1>{Weather?.name}</h1>
         <h2>{Weather?.main?.temp}°C</h2>
         <h2>{Weather?.weather?.[0]?.description}</h2>
-      </div>
+      </div> */}
+      {Weather && (
+        <>
+          <h1>{Weather.name}</h1>
+          <h2>{Math.round(Weather.main.temp)}°C</h2>
+          <h2>{Weather.weather[0].description}</h2>
+        </>
+      )}
     </div>
   );
 };
